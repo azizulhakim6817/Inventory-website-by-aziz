@@ -56,6 +56,11 @@ router.get(
   AuthVerifyMiddleware,
   BrandsController.DeleteBrand
 );
+router.get(
+  "/barndDetailsByID/:id",
+  AuthVerifyMiddleware,
+  BrandsController.barndDetailsByID
+);
 //! Categories api..........
 router.post(
   "/CreateCategoris",
@@ -81,6 +86,11 @@ router.get(
   "/DeleteCategories/:id",
   AuthVerifyMiddleware,
   CategoriesController.DeleteCategories
+);
+router.get(
+  "/categoriesDetailsByID/:id",
+  AuthVerifyMiddleware,
+  CategoriesController.categoriesDetailsByID
 );
 //! Customers api..........
 router.post(
@@ -108,6 +118,11 @@ router.get(
   AuthVerifyMiddleware,
   CustomerController.DeleteCustomer
 );
+router.get(
+  "/customersDetailsByID/:id",
+  AuthVerifyMiddleware,
+  CustomerController.customersDetailsByID
+);
 //! Suppliers api..........
 router.post(
   "/CreateSupplier",
@@ -134,6 +149,11 @@ router.get(
   AuthVerifyMiddleware,
   SupplierCotroller.DeleteSupplier
 );
+router.get(
+  "/supplierDetailsByID/:id",
+  AuthVerifyMiddleware,
+  SupplierCotroller.supplierDetailsByID
+);
 //! Expense Types api..........
 router.post(
   "/CreateExpenseTypes",
@@ -154,6 +174,11 @@ router.get(
   "/ExpenseTypesList/:pageNo/:perPage/:searchKeyword",
   AuthVerifyMiddleware,
   ExpenseTypesController.ExpenseTypesList
+);
+router.get(
+  "/expensesTypeDetailsByID/:id",
+  AuthVerifyMiddleware,
+  ExpenseTypesController.expensesTypeDetailsByID
 );
 
 //Expenses api + Expense Types (add to add )....................
@@ -177,6 +202,11 @@ router.get(
   AuthVerifyMiddleware,
   ExpensesController.DeleteExpense
 );
+router.get(
+  "/expenseDetailsByID/:id",
+  AuthVerifyMiddleware,
+  ExpensesController.expenseDetailsByID
+);
 
 //! Products.............................
 router.post(
@@ -198,6 +228,11 @@ router.get(
   "/DeleteProduct/:id",
   AuthVerifyMiddleware,
   ProductsController.DeleteProduct
+);
+router.get(
+  "/productDetailsByID/:id",
+  AuthVerifyMiddleware,
+  ProductsController.productDetailsByID
 );
 
 //! Purchases .......................

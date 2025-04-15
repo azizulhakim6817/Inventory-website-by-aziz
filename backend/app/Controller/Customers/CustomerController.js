@@ -8,6 +8,7 @@ import DropDownService from "../../Service/user/common/DropDownService.js";
 import ListService from "../../Service/user/common/ListService.js";
 import CheckAssociateService from "../../Service/user/common/CheckAssociateService.js";
 import DeleteService from "../../Service/user/common/DeleteService.js";
+import DetailsByIDService from './../../Service/user/common/DetailsByIDService.js';
 
 export const CreateCustomers = async (req, res) => {
   let result = await CreateService(req, DataModel);
@@ -56,3 +57,10 @@ export const DeleteCustomer = async (req, res) => {
     res.status(200).json(result);
   }
 };
+
+//Customers Details By ID.........................
+export const customersDetailsByID = async (req, res) => {
+  let result = await DetailsByIDService(req, DataModel);
+  res.status(200).json(result);
+};
+

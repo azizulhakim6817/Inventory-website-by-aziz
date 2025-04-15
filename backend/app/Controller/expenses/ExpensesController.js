@@ -5,6 +5,7 @@ import ListOneJoinService from "../../Service/user/common/ListOneJoinService.js"
 import UpdateService from "./../../Service/user/common/UpdateService.js";
 import ExpenseReportService from "./../../Service/reports/ExpensesReportService.js";
 import SalesSummaryService from './../../Service/Summary/ExpenseSummary.js';
+import DetailsByIDService from './../../Service/user/common/DetailsByIDService.js';
 
 export const CreateExpeness = async (req, res) => {
   let result = await CreateService(req, DataModel);
@@ -47,6 +48,12 @@ export const ExpensesByDate = async (req, res) => {
 
 export const ExpenseSummary = async (req, res) => {
   let result = await SalesSummaryService(req, DataModel);
+  res.status(200).json(result);
+};
+
+//Expense Details By ID Brands.........................
+export const expenseDetailsByID = async (req, res) => {
+  let result = await DetailsByIDService(req, DataModel);
   res.status(200).json(result);
 };
 

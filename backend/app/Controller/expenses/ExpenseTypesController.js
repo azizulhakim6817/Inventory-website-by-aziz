@@ -3,6 +3,7 @@ import CreateService from "../../Service/user/common/CreateService.js";
 import UpdateService from "../../Service/user/common/UpdateService.js";
 import DropDownService from "../../Service/user/common/DropDownService.js";
 import ListService from "../../Service/user/common/ListService.js";
+import DetailsByIDService from './../../Service/user/common/DetailsByIDService.js';
 
 
 export const CreateExpenseTypes = async (req, res) => {
@@ -23,5 +24,11 @@ export const ExpenseTypesList = async (req, res) => {
   let SeachRgx = { $regex: req.params.searchKeyword, $options: "i" };
   let SearchArray = [{ Name: SeachRgx }];
   let result = await ListService(req, DataModel, SearchArray);
+  res.status(200).json(result);
+};
+
+//Expense Types Details By ID Brands.........................
+export const expensesTypeDetailsByID = async (req, res) => {
+  let result = await DetailsByIDService(req, DataModel);
   res.status(200).json(result);
 };

@@ -1,14 +1,14 @@
 import mongoose from "mongoose";
 let ObjectId = mongoose.Types.ObjectId;
 import DataModel from "../../Module/Products/ProductsModel.js";
-import SalesModel from './../../Module/Sales/SalesModel.js';
+import SalesModel from "./../../Module/Sales/SalesModel.js";
 import PurchasesModel from "../../Module/Purchases/PurchasesModel.js";
-import ReturnProductsModel from "./../../Module/Returns/ReturnProductsModel.js";
 import CheckAssociateService from "../../Service/user/common/CheckAssociateService.js";
 import CreateService from "../../Service/user/common/CreateService.js";
 import UpdateService from "../../Service/user/common/UpdateService.js";
 import ListTwoJoinService from "./../../Service/user/common/ListTwoJoinService.js";
 import DeleteService from "../../Service/user/common/DeleteService.js";
+import DetailsByIDService from "./../../Service/user/common/DetailsByIDService.js";
 
 export const CreateProducts = async (req, res) => {
   let retult = await CreateService(req, DataModel);
@@ -91,4 +91,10 @@ export const DeleteProduct = async (req, res) => {
     let result = await DeleteService(req, DataModel);
     res.status(200).json(result);
   }
+};
+
+// Product Details By ID Brands.........................
+export const productDetailsByID = async (req, res) => {
+  let result = await DetailsByIDService(req, DataModel);
+  res.status(200).json(result);
 };
