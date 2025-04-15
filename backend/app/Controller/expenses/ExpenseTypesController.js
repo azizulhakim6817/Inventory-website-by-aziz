@@ -4,6 +4,7 @@ import UpdateService from "../../Service/user/common/UpdateService.js";
 import DropDownService from "../../Service/user/common/DropDownService.js";
 import ListService from "../../Service/user/common/ListService.js";
 
+
 export const CreateExpenseTypes = async (req, res) => {
   let result = await CreateService(req, DataModel);
   res.status(200).json(result);

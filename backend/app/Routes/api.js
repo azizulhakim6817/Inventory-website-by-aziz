@@ -246,4 +246,41 @@ router.get(
   ReturnController.ReturnDelete
 );
 
+//! Report -Expenses- Purchases- Returns- Sales...........
+router.post(
+  "/ExpensesByDate",
+  AuthVerifyMiddleware,
+  ExpensesController.ExpensesByDate
+);
+router.post(
+  "/PurchaseByDate",
+  AuthVerifyMiddleware,
+  PurchasesController.PurchaseByDate
+);
+router.post(
+  "/ReturnByDate",
+  AuthVerifyMiddleware,
+  ReturnController.ReturnByDate
+);
+
+router.post("/SalesByDate", AuthVerifyMiddleware, SaleController.SalesByDate);
+
+//! Summary -Expenses- Purchases- Returns- Sales...........
+router.get(
+  "/ExpenseSummary",
+  AuthVerifyMiddleware,
+  ExpensesController.ExpenseSummary
+);
+router.get(
+  "/PurchaseSummary",
+  AuthVerifyMiddleware,
+  PurchasesController.PurchaseSummary
+);
+router.get(
+  "/ReturnSummary",
+  AuthVerifyMiddleware,
+  ReturnController.ReturnSummary
+);
+router.get("/SalesSummary", AuthVerifyMiddleware, SaleController.SalesSummary);
+
 export default router;
